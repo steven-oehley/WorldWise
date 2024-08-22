@@ -5,11 +5,12 @@ import {
   // Navigate,
 } from "react-router-dom";
 
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/Homepage";
 import PageNotFound from "./pages/PageNotFound";
 import Pricing from "./pages/Pricing";
-import Product from "./pages/Product";
-import AppLayout from "./pages/AppLayout";
+import Product from "./pages/Product/Product";
+import AppLayout from "./pages/AppLayout/AppLayout";
+import Login from "./pages/Login/Login";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/product" element={<Product />} />
           <Route path="/app" element={<AppLayout />} />
+          <Route path="/login" element={<Login />} />
           {/* catch all route - redirect to homepage */}
           {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
           {/* catch all route - page not found */}
