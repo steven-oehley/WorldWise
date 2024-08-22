@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import PageNotFound from "./pages/PageNotFound";
 import Pricing from "./pages/Pricing";
 import Product from "./pages/Product";
+import AppLayout from "./pages/AppLayout";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/product" element={<Product />} />
+          <Route path="/app" element={<AppLayout />} />
           {/* catch all route - redirect to homepage */}
           {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
           {/* catch all route - page not found */}
