@@ -8,13 +8,16 @@ import {
 
 import { useFetchCities } from "./hooks/useFetchCities";
 
-import AppLayout from "./pages/AppLayout/AppLayout";
-import CityList from "./components/CityList/CityList";
-import HomePage from "./pages/HomePage/Homepage";
-import Login from "./pages/Login/Login";
-import PageNotFound from "./pages/PageNotFound";
-import Pricing from "./pages/Pricing";
-import Product from "./pages/Product/Product";
+import {
+  AppLayout,
+  HomePage,
+  Login,
+  PageNotFound,
+  Pricing,
+  Product,
+} from "pages";
+
+import { City, CityList, CountryList } from "components";
 
 function App() {
   const { cities, isLoading, error } = useFetchCities();
@@ -42,8 +45,18 @@ function App() {
                 <CityList cities={cities} isLoading={isLoading} error={error} />
               }
             />
+            <Route path="cities/:id" element={<City />} />
             {/* realtive path - matches a path relative to the parent route in this case /app */}
-            <Route path="countries" element={<p>List of countries</p>} />
+            <Route
+              path="countries"
+              element={
+                <CountryList
+                  cities={cities}
+                  error={error}
+                  isLoading={isLoading}
+                />
+              }
+            />
             <Route path="form" element={<Form />} />
           </Route>
           <Route path="/login" element={<Login />} />

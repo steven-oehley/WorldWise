@@ -1,8 +1,16 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import eslint from "vite-plugin-eslint";
+import path from "path";
 
-// https://vitejs.dev/config/
+// Use `new URL` and `import.meta.url` to resolve paths
 export default defineConfig({
-  plugins: [react(), eslint()],
+  plugins: [react()],
+  resolve: {
+    alias: {
+      components: path.resolve(
+        new URL("./src/components", import.meta.url).pathname
+      ),
+      pages: path.resolve(new URL("./src/pages", import.meta.url).pathname),
+    },
+  },
 });

@@ -33,6 +33,11 @@ body {
   line-height: 1.6;
 }
 
+body,
+html {
+  overflow-x: hidden;
+}
+
 label {
   font-size: 1.6rem;
   font-weight: 600;

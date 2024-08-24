@@ -1,5 +1,4 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Map from "../../components/Map/Map";
+import { Map, Sidebar } from "components";
 
 import styles from "./AppLayout.module.css";
 
