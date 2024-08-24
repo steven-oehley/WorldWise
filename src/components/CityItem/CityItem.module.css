@@ -2,8 +2,10 @@
 .cityItem:link,
 .cityItem:visited {
   display: flex;
-  gap: 1.6rem;
+  gap: 2rem;
   align-items: center;
+
+  margin-top: 2em;
 
   background-color: var(--color-dark--2);
   border-radius: 7px;
