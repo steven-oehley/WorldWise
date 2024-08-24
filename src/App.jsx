@@ -2,8 +2,7 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Form,
-  // Navigate,
+  Navigate,
 } from "react-router-dom";
 
 import { useFetchCities } from "./hooks/useFetchCities";
@@ -17,7 +16,7 @@ import {
   Product,
 } from "pages";
 
-import { City, CityList, CountryList } from "components";
+import { City, CityList, CountryList, Form } from "components";
 
 function App() {
   const { cities, isLoading, error } = useFetchCities();
@@ -33,12 +32,7 @@ function App() {
           <Route path="/app" element={<AppLayout />}>
             {/* nested routes go in here */}
             {/* index route is the default nested route - what appears when no matches */}
-            <Route
-              index
-              element={
-                <CityList cities={cities} isLoading={isLoading} error={error} />
-              }
-            />
+            <Route index element={<Navigate replace to="cities" />} />
             <Route
               path="cities"
               element={
