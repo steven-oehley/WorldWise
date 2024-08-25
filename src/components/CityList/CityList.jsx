@@ -1,8 +1,10 @@
+import { useCities } from "../../context/useCities";
 import styles from "./CityList.module.css";
 
 import { CityItem, Error, Message, Spinner } from "components";
 
-function CityList({ cities, isLoading, error }) {
+function CityList() {
+  const { cities, isLoading, error } = useCities();
   if (isLoading) return <Spinner />;
 
   if (error) return <Error />;

@@ -5,7 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import { useFetchCities } from "./hooks/useFetchCities";
+import { CitiesProvider } from "./context/CitiesContext";
 
 import {
   AppLayout,
@@ -19,48 +19,34 @@ import {
 import { City, CityList, CountryList, Form } from "components";
 
 function App() {
-  const { cities, isLoading, error } = useFetchCities();
-
   return (
-    <div className="app">
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          {/* absolute path - matches exactly to /pricing */}
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/app" element={<AppLayout />}>
-            {/* nested routes go in here */}
-            {/* index route is the default nested route - what appears when no matches */}
-            <Route index element={<Navigate replace to="cities" />} />
-            <Route
-              path="cities"
-              element={
-                <CityList cities={cities} isLoading={isLoading} error={error} />
-              }
-            />
-            <Route path="cities/:id" element={<City />} />
-            {/* realtive path - matches a path relative to the parent route in this case /app */}
-            <Route
-              path="countries"
-              element={
-                <CountryList
-                  cities={cities}
-                  error={error}
-                  isLoading={isLoading}
-                />
-              }
-            />
-            <Route path="form" element={<Form />} />
-          </Route>
-          <Route path="/login" element={<Login />} />
-          {/* catch all route - redirect to homepage */}
-          {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
-          {/* catch all route - page not found */}
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </Router>
-    </div>
+    <CitiesProvider>
+      <div className="app">
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            {/* absolute path - matches exactly to /pricing */}
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/app" element={<AppLayout />}>
+              {/* nested routes go in here */}
+              {/* index route is the default nested route - what appears when no matches */}
+              <Route index element={<Navigate replace to="cities" />} />
+              <Route path="cities" element={<CityList />} />
+              <Route path="cities/:id" element={<City />} />
+              {/* realtive path - matches a path relative to the parent route in this case /app */}
+              <Route path="countries" element={<CountryList />} />
+              <Route path="form" element={<Form />} />
+            </Route>
+            <Route path="/login" element={<Login />} />
+            {/* catch all route - redirect to homepage */}
+            {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
+            {/* catch all route - page not found */}
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </Router>
+      </div>
+    </CitiesProvider>
   );
 }
 

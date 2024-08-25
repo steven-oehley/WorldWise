@@ -3,8 +3,10 @@ import { v4 as uuidv4 } from "uuid";
 import { CountryItem, Error, Message, Spinner } from "components";
 
 import styles from "./CountryList.module.css";
+import { useCities } from "../../context/useCities";
 
-function CountryList({ cities, isLoading, error }) {
+function CountryList() {
+  const { cities, isLoading, error } = useCities();
   if (isLoading) return <Spinner />;
 
   if (error) return <Error error={error} />;

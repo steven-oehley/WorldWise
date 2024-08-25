@@ -14,7 +14,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 // query string can pass data around - can pick up that data here in map and use from query string
 
 function Map() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
 
