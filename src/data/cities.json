@@ -35,6 +35,54 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Tokyo",
+      "country": "Japan",
+      "emoji": "🇯🇵",
+      "date": "2027-03-27T14:18:35.123Z",
+      "notes": "The most vibrant city I've ever visited!",
+      "position": {
+        "lat": 35.6762,
+        "lng": 139.6503
+      },
+      "id": 56127843
+    },
+    {
+      "cityName": "New York",
+      "country": "USA",
+      "emoji": "🇺🇸",
+      "date": "2027-08-22T10:44:29.674Z",
+      "notes": "The city that never sleeps.",
+      "position": {
+        "lat": 40.7128,
+        "lng": -74.006
+      },
+      "id": 20387465
+    },
+    {
+      "cityName": "Sydney",
+      "country": "Australia",
+      "emoji": "🇦🇺",
+      "date": "2027-11-05T16:55:12.784Z",
+      "notes": "Beautiful beaches and amazing weather.",
+      "position": {
+        "lat": -33.8688,
+        "lng": 151.2093
+      },
+      "id": 47512098
+    },
+    {
+      "cityName": "Cape Town",
+      "country": "South Africa",
+      "emoji": "🇿🇦",
+      "date": "2027-05-18T12:30:45.567Z",
+      "notes": "Stunning views from Table Mountain.",
+      "position": {
+        "lat": -33.9249,
+        "lng": 18.4241
+      },
+      "id": 89213476
     }
   ]
 }

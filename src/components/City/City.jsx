@@ -2,7 +2,8 @@ import { BackButton, Spinner, Error } from "components";
 
 import styles from "./City.module.css";
 import { useParams } from "react-router-dom";
-import { useFetchCity } from "../../hooks/useFetchCity";
+import { useCities } from "../../context/useCities";
+import { useEffect } from "react";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -14,13 +15,15 @@ const formatDate = (date) =>
 
 function City() {
   const { id } = useParams();
+  const { fetchCity, currentCity, isLoading, error } = useCities();
 
-  const { city, isLoading, error } = useFetchCity(id);
+  useEffect(() => {
+    fetchCity(id);
+  }, [id, fetchCity]);
 
-  const { cityName, emoji, date, notes } = city;
+  const { cityName, emoji, date, notes } = currentCity;
 
   if (isLoading) return <Spinner />;
-
   if (error) return <Error />;
 
   return (
