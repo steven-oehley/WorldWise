@@ -5,6 +5,15 @@ import Login from "./Login/Login";
 import PageNotFound from "./PageNotFound";
 import Pricing from "./Pricing";
 import Product from "./Product/Product";
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 
 // Export all pages
-export { AppLayout, HomePage, Login, PageNotFound, Pricing, Product };
+export {
+  AppLayout,
+  HomePage,
+  Login,
+  PageNotFound,
+  Pricing,
+  Product,
+  ProtectedRoute,
+};

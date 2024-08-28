@@ -76,7 +76,7 @@ function Form() {
       position: { lat, lng },
     };
 
-    await createCity(newCity);
+    await createCity(newCity); // wait for this to finish before navigating
     navigate("/app/cities");
   }
 
@@ -123,7 +123,9 @@ function Form() {
       </div>
 
       <div className={styles.buttons}>
-        <Button type="primary">Add</Button>
+        <Button type="submit" bType="primary">
+          Add
+        </Button>
         <BackButton />
       </div>
     </form>

@@ -6,7 +6,7 @@ function BackButton() {
 
   return (
     <Button
-      type="back"
+      bType="back"
       onClick={(e) => {
         e.preventDefault();
         navigate(-1);

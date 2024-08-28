@@ -47,6 +47,42 @@
         "lat": "39.26628442213066",
         "lng": "-5.009765625000001"
       }
+    },
+    {
+      "id": "d55c",
+      "cityName": "Cape Town",
+      "country": "South Africa",
+      "emoji": "🇿🇦",
+      "date": "2024-08-28T09:38:58.800Z",
+      "notes": "nice place\n",
+      "position": {
+        "lat": "-33.90689555128868",
+        "lng": "18.588867187500004"
+      }
+    },
+    {
+      "id": "714b",
+      "cityName": "Maseru",
+      "country": "Lesotho",
+      "emoji": "🇱🇸",
+      "date": "2024-08-28T09:39:54.868Z",
+      "notes": "nice place\n",
+      "position": {
+        "lat": "-29.802517905764464",
+        "lng": "27.773437500000004"
+      }
+    },
+    {
+      "id": "1b56",
+      "cityName": "Ribera d'Urgellet",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-08-28T09:42:50.647Z",
+      "notes": "nice place\n\n",
+      "position": {
+        "lat": "42.32606244456202",
+        "lng": "1.40625"
+      }
     }
   ]
 }

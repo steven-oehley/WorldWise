@@ -71,9 +71,12 @@ function CitiesProvider({ children }) {
   }, []);
 
   const fetchCity = useCallback(async (id) => {
+    if (+id === currentCity.id) return;
+
     const url = import.meta.env.VITE_API_URL;
     const controller = new AbortController();
     dispatch({ type: "loading" });
+
     try {
       const response = await fetch(`${url}/${id}`, {
         signal: controller.signal,
